@@ -9,10 +9,13 @@ FROM python:3-alpine
 # maintainer
 LABEL maintainer = "Anthony Loukinas <anthony.loukinas@redhat.com>"
 
-RUN git clone https://github.com/anthonyloukinas/docker-api.git &&\
+RUN apk add git &&\
+    git clone https://github.com/anthonyloukinas/docker-api.git &&\
     cd /docker-api &&\
     pip install -r requirements.txt &&\
-    export FLASK_APP=/docker-api/client.py
+    export FLASK_APP=/docker-api/client.py &&\
+    apk del git &&\
+    rm -rf /var/cache/apk/*
 
 ENTRYPOINT [ "python" ]
 
