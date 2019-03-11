@@ -254,4 +254,4 @@ api.add_resource(RemoveVolume, '/api/v1/volumes/remove_volume')
 api.add_resource(CreateVolume, '/api/v1/volumes/create_volume')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

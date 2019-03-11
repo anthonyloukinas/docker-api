@@ -9,12 +9,11 @@ FROM python:3
 # maintainer
 LABEL maintainer = "Anthony Loukinas <anthony.loukinas@redhat.com>"
 
-WORKDIR /app
-
 RUN git clone https://github.com/anthonyloukinas/docker-api.git &&\
-    cd /app/docker-api &&\
+    cd /docker-api &&\
     pip install -r requirements.txt &&\
-    export FLASK_APP=/app/docker-api/client.py
+    export FLASK_APP=/docker-api/client.py
 
 ENTRYPOINT [ "python" ]
-CMD [ "/app/docker-api/client.py" ]
+
+CMD [ "/docker-api/client.py" ]
