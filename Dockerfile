@@ -4,7 +4,7 @@
 #
 #
 
-FROM python:3
+FROM python:3-alpine
 
 # maintainer
 LABEL maintainer = "Anthony Loukinas <anthony.loukinas@redhat.com>"
